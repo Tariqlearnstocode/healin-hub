@@ -10,8 +10,24 @@
 <link rel="stylesheet" href="css/components.css" />
 <link rel="stylesheet" href="brand-guide/first-light.css" />
 <link rel="stylesheet" href="css/pitch.css" />
+<style>
+.site-nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:52px;background:var(--surface-card);border-bottom:1px solid var(--border-default);position:sticky;top:0;z-index:100}
+.site-nav .nav-logo{font-family:var(--font-display);font-size:18px;color:var(--text-primary);text-decoration:none}
+.site-nav .nav-links{display:flex;gap:6px}
+.site-nav .nav-links a{font-family:var(--font-body);font-size:13.5px;font-weight:600;color:var(--text-secondary);text-decoration:none;padding:6px 14px;border-radius:var(--radius-pill);transition:background .15s,color .15s}
+.site-nav .nav-links a:hover{background:var(--surface-tint);color:var(--text-primary)}
+.site-nav .nav-links a.active{background:var(--surface-tint);color:var(--color-action)}
+@media(max-width:600px){.site-nav{padding:0 20px}}
+</style>
 </head>
 <body>
+<nav class="site-nav">
+  <a class="nav-logo" href="index.html">The Healin Hub</a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Proposal</a>
+    <a href="brand-guide.html">Brand Guide</a>
+  </div>
+</nav>
 
 <!-- ================= HERO ================= -->
 <header class="pitch-hero" data-screen-label="Hero">
@@ -329,7 +345,10 @@
 <footer class="pitch-footer" data-screen-label="Footer">
   <div class="wrap">
     <span><strong>C4 Growth Solutions</strong> · Chicago, IL · clarence@c4-holding.com</span>
-    <span>Prepared for Dawn Foster · June 2026</span>
+    <span style="display:flex;align-items:center;gap:24px;">
+      <span>Prepared for Dawn Foster · June 2026</span>
+      <a href="brand-guide.html" style="color:var(--spruce-300);font-weight:600;text-decoration:none;font-size:13.5px;white-space:nowrap;">First Light Brand Guide →</a>
+    </span>
   </div>
 </footer>
 
