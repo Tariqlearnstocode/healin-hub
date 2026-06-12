@@ -1,0 +1,189 @@
+/* ============================================================
+   The Healin Hub — First Light · component library
+   Consumes tokens from styles.css (link that first).
+   ============================================================ */
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: var(--radius-pill);
+  padding: 0 24px;
+  height: 44px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-lg { height: 52px; padding: 0 30px; font-size: 16px; }
+.btn-sm { height: 36px; padding: 0 18px; font-size: 14px; }
+.btn-primary { background: var(--color-action); color: var(--white); }
+.btn-primary:hover { background: var(--color-action-hover); }
+.btn-primary:active { background: var(--spruce-700); }
+.btn-secondary { background: var(--surface-card); color: var(--color-action); border-color: var(--spruce-200); }
+.btn-secondary:hover { background: var(--spruce-50); }
+.btn-secondary:active { background: var(--spruce-100); }
+.btn-tertiary { background: transparent; color: var(--color-action); padding: 0 8px; }
+.btn-tertiary:hover { text-decoration: underline; text-underline-offset: 4px; }
+.btn:focus-visible { outline: none; box-shadow: var(--shadow-focus); }
+.btn[disabled], .btn.is-disabled { background: var(--n-100); color: var(--text-muted); border-color: transparent; cursor: not-allowed; pointer-events: none; }
+
+/* ---------- Form fields ---------- */
+.field { display: flex; flex-direction: column; gap: 6px; font-family: var(--font-body); }
+.field > label { font-size: 13.5px; font-weight: 600; color: var(--text-primary); }
+.field input, .field select, .field textarea {
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  color: var(--text-primary);
+  background: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.field input::placeholder, .field textarea::placeholder { color: var(--text-muted); }
+.field input:hover, .field select:hover, .field textarea:hover { border-color: var(--border-strong); }
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--spruce-400); box-shadow: var(--shadow-focus); }
+.field .help { font-size: 13px; color: var(--text-secondary); }
+.field.error input, .field.error select, .field.error textarea { border-color: var(--error); }
+.field.error .help { color: var(--error); }
+
+/* ---------- Search bar (what + where) ---------- */
+.searchbar {
+  display: flex;
+  align-items: stretch;
+  background: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-2);
+  padding: 6px;
+  font-family: var(--font-body);
+}
+.sb-field { flex: 1; min-width: 0; padding: 8px 22px; display: flex; flex-direction: column; gap: 1px; }
+.sb-field + .sb-field { border-left: 1px solid var(--border-default); }
+.sb-field label { font-size: 10.5px; font-weight: 600; letter-spacing: var(--label-tracking); text-transform: uppercase; color: var(--text-secondary); }
+.sb-field input { border: none; background: transparent; font-family: var(--font-body); font-size: 15.5px; color: var(--text-primary); outline: none; width: 100%; }
+.sb-field input::placeholder { color: var(--text-muted); }
+
+/* ---------- Chips / filters ---------- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--surface-tint);
+  color: var(--spruce-700);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  padding: 9px 18px;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.chip:hover { background: var(--spruce-200); }
+.chip.active { background: var(--color-action); color: var(--white); }
+
+/* ---------- Badges (trust system) ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1;
+}
+.badge-vetted { background: var(--color-action); color: var(--white); }
+.badge-verified { background: var(--surface-card); color: var(--color-action); border: 1px solid var(--spruce-200); }
+.badge-featured { background: var(--blush-100); color: var(--featured-text); }
+
+/* ---------- Rating ---------- */
+.rating { display: inline-flex; align-items: baseline; gap: 8px; font-family: var(--font-body); font-size: 14px; }
+.rating .stars { color: var(--color-action); letter-spacing: 1.5px; }
+.rating .score { font-weight: 700; color: var(--text-primary); }
+.rating .count { color: var(--text-secondary); }
+
+/* ---------- Provider card (grid) ---------- */
+.pcard {
+  background: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+  overflow: hidden;
+  font-family: var(--font-body);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.pcard:hover { box-shadow: var(--shadow-2); transform: translateY(-2px); }
+.pcard .pimg { height: 150px; background: linear-gradient(135deg, var(--spruce-200), var(--spruce-50)); position: relative; }
+.pcard .pimg .badge { position: absolute; top: 12px; left: 12px; }
+.pcard .pbody { padding: 18px 20px 20px; }
+.pcard h4 { font-family: var(--font-display); font-weight: 400; font-size: 22px; line-height: 1.15; color: var(--text-primary); margin: 0; }
+.pcard .pmeta { font-size: 13px; color: var(--text-secondary); margin: 5px 0 0; }
+.pcard .pfoot { display: flex; align-items: center; justify-content: space-between; margin-top: 14px; padding-top: 13px; border-top: 1px solid var(--border-default); font-size: 13px; }
+.pcard .dist { color: var(--text-secondary); }
+
+/* ---------- Provider row (list) ---------- */
+.prow {
+  display: flex;
+  gap: 16px;
+  background: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+  padding: 14px;
+  font-family: var(--font-body);
+  transition: box-shadow 0.2s ease;
+}
+.prow:hover { box-shadow: var(--shadow-2); }
+.prow .pimg { width: 96px; height: 96px; flex: none; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--spruce-200), var(--spruce-50)); }
+.prow .pbody { flex: 1; min-width: 0; padding: 2px 0; }
+.prow h4 { font-family: var(--font-display); font-weight: 400; font-size: 20px; line-height: 1.1; color: var(--text-primary); margin: 0; display: flex; align-items: center; gap: 10px; }
+.prow .pmeta { font-size: 13px; color: var(--text-secondary); margin: 4px 0 8px; }
+.prow .pside { flex: none; display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; padding: 2px 4px; font-size: 13px; color: var(--text-secondary); }
+
+/* ---------- Tabs ---------- */
+.tabs { display: flex; gap: 26px; border-bottom: 1px solid var(--border-default); font-family: var(--font-body); }
+.tab {
+  padding: 12px 2px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s ease;
+}
+.tab:hover { color: var(--text-primary); }
+.tab.active { color: var(--color-action); border-bottom-color: var(--color-action); font-weight: 600; }
+
+/* ---------- Alerts ---------- */
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: var(--radius-md);
+  padding: 13px 16px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.alert b { font-weight: 600; }
+.alert-info { background: var(--surface-tint); color: var(--spruce-700); }
+.alert-success { background: var(--success-tint); color: var(--success); }
+.alert-error { background: var(--error-tint); color: var(--error); }
+
+/* ---------- Icons (Lucide) ---------- */
+.icon { width: 20px; height: 20px; stroke-width: 1.75; flex: none; }
+.icon-sm { width: 16px; height: 16px; }
