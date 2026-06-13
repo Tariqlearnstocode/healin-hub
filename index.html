@@ -11,39 +11,151 @@
 <link rel="stylesheet" href="brand-guide/first-light.css" />
 <link rel="stylesheet" href="css/pitch.css" />
 <style>
-.site-nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:52px;background:var(--surface-card);border-bottom:1px solid var(--border-default);position:sticky;top:0;z-index:100}
-.site-nav .nav-logo{font-family:var(--font-display);font-size:18px;color:var(--text-primary);text-decoration:none}
-.site-nav .nav-links{display:flex;gap:6px}
-.site-nav .nav-links a{font-family:var(--font-body);font-size:13.5px;font-weight:600;color:var(--text-secondary);text-decoration:none;padding:6px 14px;border-radius:var(--radius-pill);transition:background .15s,color .15s}
-.site-nav .nav-links a:hover{background:var(--surface-tint);color:var(--text-primary)}
-.site-nav .nav-links a.active{background:var(--surface-tint);color:var(--color-action)}
-@media(max-width:600px){.site-nav{padding:0 20px}}
+/* ── Nav ── */
+.site-nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:56px;background:var(--surface-card);border-bottom:1px solid var(--border-default);position:sticky;top:0;z-index:100}
+.site-nav .nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.site-nav .nav-brand img{height:22px;display:block}
+.site-nav .nav-divider{width:1px;height:20px;background:var(--border-default)}
+.site-nav .nav-label{font-family:var(--font-body);font-size:13px;color:var(--text-secondary);font-weight:500}
+.site-nav .nav-right{display:flex;align-items:center;gap:20px}
+.site-nav .nav-guide{font-family:var(--font-body);font-size:13.5px;font-weight:600;color:var(--text-secondary);text-decoration:none;transition:color .15s}
+.site-nav .nav-guide:hover{color:var(--color-action)}
+.site-nav .nav-cta{font-family:var(--font-body);font-size:13.5px;font-weight:600;color:#fff;background:var(--spruce-700);text-decoration:none;padding:9px 22px;border-radius:var(--radius-pill);transition:background .15s}
+.site-nav .nav-cta:hover{background:var(--spruce-900)}
+@media(max-width:600px){.site-nav{padding:0 20px}.site-nav .nav-label,.site-nav .nav-guide{display:none}}
+
+/* ── Split hero ── */
+.pitch-hero{padding:72px 0 80px;background:linear-gradient(160deg,var(--spruce-100) 0%,var(--surface-page) 70%);border-bottom:1px solid var(--border-default)}
+.hero-split{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:center}
+.hero-kicker{display:flex;align-items:center;gap:12px;font:var(--text-label);letter-spacing:var(--label-tracking);text-transform:uppercase;color:var(--color-action);margin-bottom:22px}
+.hero-kicker::before{content:'';display:block;width:28px;height:2px;background:var(--color-action);border-radius:2px;flex:none}
+.pitch-hero h1{font:var(--text-display-xl);font-size:54px;line-height:1.04;letter-spacing:-0.01em;max-width:560px;text-wrap:pretty}
+.pitch-hero h1 em{font-style:italic;color:var(--color-action)}
+.pitch-hero .lede{margin-top:18px;font:var(--text-body-lg);color:var(--text-secondary);max-width:480px;text-wrap:pretty}
+.hero-pills{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px}
+.hero-pill{display:flex;align-items:center;gap:10px;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-pill);padding:11px 16px;font-family:var(--font-body);font-size:13.5px;font-weight:500;color:var(--text-primary)}
+.hero-pill svg{width:16px;height:16px;color:var(--color-action);stroke-width:2;flex:none}
+.hero-rule{border:none;border-top:1px solid var(--border-default);margin:28px 0}
+.pitch-hero .meta{display:flex;gap:32px;font-size:13.5px;color:var(--text-secondary)}
+.pitch-hero .meta strong{display:block;color:var(--text-primary);font-weight:600;margin-top:2px}
+
+/* ── Hero browser mock ── */
+.hero-mock .mock-bar{display:flex;align-items:center;gap:7px;padding:11px 16px}
+.hero-mock .mock-url{flex:1;background:var(--n-100);border-radius:var(--radius-pill);padding:5px 14px;font-size:11.5px;color:var(--text-secondary);font-family:ui-monospace,"SF Mono",Menlo,monospace;margin-left:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hero-mock .rm{padding:18px 22px 22px}
+.hero-mock .rm-head h4{font-family:var(--font-display);font-weight:400;font-size:20px;color:var(--text-primary)}
+.hero-mock .rm-filters{gap:7px;margin-bottom:14px}
+.hero-mock .rm-filters .chip{padding:6px 13px;font-size:12px}
+.hero-mock .rm-body{grid-template-columns:1.1fr 0.9fr;gap:12px}
+.hero-mock .rm-map{height:258px}
+.hero-mock .prow{padding:10px}
+.hero-mock .prow .pimg{width:72px;height:72px;border-radius:var(--radius-sm)}
+.hero-mock .prow h4{font-size:14px;line-height:1.2;gap:7px}
+.hero-mock .prow .pmeta{font-size:11.5px;margin:3px 0 5px}
+.hero-mock .prow .rating{font-size:12px}
+.hero-mock .prow .pside{font-size:12px}
+.hero-mock .rm-map .pin{width:22px;height:22px;background:var(--spruce-700)}
+.hero-mock .rm-map .pin::after{inset:6px}
+
+@media(max-width:1080px){.hero-split{grid-template-columns:1fr}.hero-right{display:none}}
+@media(max-width:600px){.pitch-hero h1{font-size:42px}}
 </style>
 </head>
 <body>
 <nav class="site-nav">
-  <a class="nav-logo" href="index.html">The Healin Hub</a>
-  <div class="nav-links">
-    <a href="index.html" class="active">Proposal</a>
-    <a href="brand-guide.html">Brand Guide</a>
+  <a class="nav-brand" href="index.html">
+    <img src="assets/logo-ink.png" alt="The Healin Hub" />
+    <span class="nav-divider"></span>
+    <span class="nav-label">Rebuild Proposal</span>
+  </a>
+  <div class="nav-right">
+    <a class="nav-guide" href="brand-guide.html">Brand Guide</a>
+    <a class="nav-cta" href="#demo">See it in action</a>
   </div>
 </nav>
 
 <!-- ================= HERO ================= -->
 <header class="pitch-hero" data-screen-label="Hero">
-  <div class="wrap">
-    <img class="hero-logo" src="assets/logo-ink.png" alt="The Healin Hub" />
-    <h1>A directory that actually finds what&rsquo;s <em>near you.</em></h1>
-    <p class="lede">The Healin Hub as a modern, custom-built platform: real geographic search, beautiful provider pages, a backend you fully control, and a brand designed to be trusted — in all 50 states.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-primary btn-lg" href="#quotes">See the two quotes</a>
-      <a class="btn btn-secondary btn-lg" href="#demo">Try the search demo</a>
+  <div class="wrap hero-split">
+
+    <!-- Left: copy -->
+    <div class="hero-left">
+      <p class="hero-kicker">Proposal for The Healin Hub</p>
+      <h1>A directory that actually finds what&rsquo;s <em>near you.</em></h1>
+      <p class="lede">A modern, custom-built rebuild — real geographic search, beautiful provider pages, and a backend you fully control, in all 50 states.</p>
+      <div class="hero-pills">
+        <span class="hero-pill"><i data-lucide="map-pin"></i>Real distance search</span>
+        <span class="hero-pill"><i data-lucide="shield-check"></i>Vetted provider pages</span>
+        <span class="hero-pill"><i data-lucide="layout-dashboard"></i>You control everything</span>
+        <span class="hero-pill"><i data-lucide="trending-up"></i>Built to rank on Google</span>
+      </div>
+      <hr class="hero-rule" />
+      <div class="meta">
+        <div>Prepared for<strong>Dawn Foster</strong></div>
+        <div>By<strong>C4 Growth Solutions</strong></div>
+        <div>Date<strong>June 2026</strong></div>
+      </div>
     </div>
-    <div class="meta">
-      <div>Prepared for <strong>Dawn Foster · The Healin Hub</strong></div>
-      <div>By <strong>C4 Growth Solutions</strong></div>
-      <div>Date <strong>June 2026</strong></div>
+
+    <!-- Right: product mock -->
+    <div class="hero-right">
+      <div class="mock hero-mock">
+        <div class="mock-bar">
+          <i></i><i></i><i></i>
+          <span class="mock-url">thehealinhub.com/search?near=chicago-il</span>
+        </div>
+        <div class="rm">
+          <div class="rm-head">
+            <h4>Post-op care near Chicago, IL</h4>
+            <span class="sort">12 vetted · by distance</span>
+          </div>
+          <div class="rm-filters">
+            <button class="chip active" type="button">Within 10 mi</button>
+            <button class="chip active" type="button">Post-op care</button>
+            <button class="chip" type="button">Body sculpting</button>
+            <button class="chip" type="button">Open now</button>
+          </div>
+          <div class="rm-body">
+            <div class="rm-list">
+              <div class="prow">
+                <div class="pimg"></div>
+                <div class="pbody">
+                  <h4>Chicago Dollz Experience <span class="badge badge-vetted" style="font-size:11px;padding:3px 9px;">✓ Vetted</span></h4>
+                  <p class="pmeta">Post-op massage · Body sculpting</p>
+                  <span class="rating"><span class="stars">★★★★★</span><span class="score">5.0</span></span>
+                </div>
+                <div class="pside"><b>0.0 mi</b></div>
+              </div>
+              <div class="prow">
+                <div class="pimg"></div>
+                <div class="pbody">
+                  <h4>West Loop Aesthetics <span class="badge badge-vetted" style="font-size:11px;padding:3px 9px;">✓ Vetted</span></h4>
+                  <p class="pmeta">Med spa · Injectables</p>
+                  <span class="rating"><span class="stars">★★★★★</span><span class="score">4.8</span></span>
+                </div>
+                <div class="pside"><b>3.1 mi</b></div>
+              </div>
+              <div class="prow">
+                <div class="pimg"></div>
+                <div class="pbody">
+                  <h4>Hyde Park Glow Studio</h4>
+                  <p class="pmeta">Facials · Skin care</p>
+                  <span class="rating"><span class="stars">★★★★★</span><span class="score">4.7</span></span>
+                </div>
+                <div class="pside"><b>4.6 mi</b></div>
+              </div>
+            </div>
+            <div class="rm-map">
+              <span class="pin" style="left:48%;top:44%;"></span>
+              <span class="pin" style="left:66%;top:26%;"></span>
+              <span class="pin" style="left:74%;top:58%;"></span>
+              <span class="map-tag">Chicago, IL · 10 mi</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
 </header>
 
