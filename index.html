@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="css/pitch.css" />
 <style>
 /* ── Nav ── */
-.site-nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:56px;background:var(--surface-card);border-bottom:1px solid var(--border-default);position:sticky;top:0;z-index:100}
+.site-nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:56px;background:rgba(247,250,248,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #DDE6E0;position:sticky;top:0;z-index:100}
 .site-nav .nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none}
 .site-nav .nav-brand img{height:22px;display:block}
 .site-nav .nav-divider{width:1px;height:20px;background:var(--border-default)}
@@ -26,7 +26,8 @@
 
 /* ── Split hero ── */
 .pitch-hero{padding:72px 0 80px;background:linear-gradient(160deg,var(--spruce-100) 0%,var(--surface-page) 70%);border-bottom:1px solid var(--border-default)}
-.hero-split{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:center}
+.pitch-hero .wrap{max-width:1360px}
+.hero-split{display:grid;grid-template-columns:1fr 1.2fr;gap:72px;align-items:center}
 .hero-kicker{display:flex;align-items:center;gap:12px;font:var(--text-label);letter-spacing:var(--label-tracking);text-transform:uppercase;color:var(--color-action);margin-bottom:22px}
 .hero-kicker::before{content:'';display:block;width:28px;height:2px;background:var(--color-action);border-radius:2px;flex:none}
 .pitch-hero h1{font:var(--text-display-xl);font-size:54px;line-height:1.04;letter-spacing:-0.01em;max-width:560px;text-wrap:pretty}
