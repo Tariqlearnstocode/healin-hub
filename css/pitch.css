@@ -156,4 +156,73 @@
   .lp-gallery, .lp-body, .profile { grid-template-columns: 1fr; }
   .pitch-hero h1 { font-size: 50px; }
   .quote-card .q-now { font-size: 44px; }
+  /* 2-up on tablet for the densest grids */
+  .feature-grid, .included-grid { grid-template-columns: 1fr 1fr; }
+  .grid-4 { grid-template-columns: 1fr 1fr; }
+  .lp-gallery image-slot { height: 180px; }
+  .profile image-slot { width: 160px; height: 160px; }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 600px) {
+  /* Tighter vertical rhythm + side gutters */
+  .wrap { padding: 0 18px; }
+  .g-section { padding: 52px 0; }
+  .pitch-hero { padding: 56px 0 48px; }
+
+  /* Fluid display type so big serifs never feel oversized on a phone
+     (the split-hero h1 is sized by its own inline media query) */
+  .pitch-hero .lede { margin-top: 18px; font-size: 16.5px; }
+  .g-title { font-size: clamp(30px, 9vw, 40px); }
+  .g-intro { font-size: 16.5px; }
+  .verdict { font-size: 24px; }
+  .cta-band h2 { font-size: clamp(30px, 9vw, 40px); }
+
+  /* Hero meta stacks cleanly */
+  .pitch-hero .meta { flex-direction: column; gap: 16px; }
+
+  /* Everything goes one column at phone width */
+  .feature-grid, .included-grid, .grid-4, .steps, .fit-grid { grid-template-columns: 1fr; }
+
+  /* Listing mock — drop the oversized desktop padding */
+  .lp-head { padding: 22px 20px 18px; flex-direction: column; align-items: flex-start; }
+  .lp-head h4 { font-size: 30px; }
+  .lp-actions { width: 100%; flex-direction: column; align-items: stretch; }
+  .lp-actions .btn { width: 100%; }
+  .lp-gallery { grid-template-columns: 1fr 1fr; padding: 0 20px; }
+  .lp-gallery image-slot:first-child { grid-column: 1 / -1; }
+  .lp-gallery image-slot { height: 150px; }
+  .lp-body { padding: 24px 20px 32px; gap: 22px; }
+  .lp-sec h5 { font-size: 21px; }
+
+  /* Demo controls wrap to rows; vertical separators don't read well stacked */
+  .demo-panel { padding: 22px 18px; }
+  .demo-controls .sep { display: none; }
+  .demo-controls { gap: 8px; }
+  .demo-map { height: 300px; }
+
+  /* Works anywhere — tighten the 50-state grid into a compact, centered cluster
+     so it reads as "we cover everywhere" proof, not a clunky picker */
+  .seo-urls code { font-size: 12.5px; padding: 7px 12px; }
+  .states { gap: 6px; margin-top: 22px; justify-content: center; }
+  .states span { padding: 4px 9px; font-size: 11px; }
+
+  /* Quotes */
+  .quote-card .q-head { padding: 24px 22px 20px; }
+  .quote-card .q-price { padding: 20px 22px; }
+  .quote-card ul { padding: 20px 22px; }
+  .quote-card .q-foot { padding: 18px 22px 26px; }
+  .quote-card .q-now { font-size: 40px; }
+
+  /* Profile */
+  .profile { padding: 28px 22px; gap: 22px; justify-items: start; }
+  .profile .links { flex-direction: column; align-items: stretch; }
+  .profile .links .btn { width: 100%; }
+
+  /* CTA band + footer */
+  .cta-band { padding: 60px 0; }
+  .cta-band .hero-ctas { flex-direction: column; align-items: stretch; }
+  .cta-band .hero-ctas .btn { width: 100%; }
+  .pitch-footer .wrap { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .pitch-footer .wrap > span:last-child { flex-direction: column; align-items: flex-start; gap: 6px; }
 }
