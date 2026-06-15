@@ -187,3 +187,40 @@ body {
   .mock-hero h3 { font-size: 38px; }
   .mock-nav .mlinks a:not(:last-child) { display: none; }
 }
+
+@media (max-width: 600px) {
+  .wrap { padding: 0 18px; }
+  .cover { padding: 64px 0 56px; }
+  .cover img.cover-logo { width: 200px; }
+  .cover h1 { font-size: 38px; }
+  .cover .lede { font-size: 16px; }
+  .cover .meta { flex-direction: column; gap: 18px; }
+  .g-section { padding: 56px 0; }
+  .g-title { font-size: 36px; }
+  .type-hero { font-size: 36px; }
+  .swatch-row { grid-template-columns: repeat(2, 1fr); }
+  .pair-grid { grid-template-columns: 1fr 1fr; }
+  .ts-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .ts-meta { width: auto; }
+  .ts-sample { white-space: normal; font-size: 15px !important; }
+  .mock-nav { padding: 16px 20px; }
+  .mock-nav img { width: 110px; }
+  .mock-hero { padding: 36px 20px 48px; }
+  .mock-hero h3 { font-size: 26px; }
+  .mock-hero .msub { font-size: 15px; margin-bottom: 24px; }
+  .rm { padding: 20px; }
+  .rm-head { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .rm-map { height: 260px; }
+  .lh { padding: 24px 20px 28px; }
+  .lh h4 { font-size: 28px; }
+  .lh .lh-actions { flex-wrap: wrap; }
+  .ratio-bar { height: auto; flex-direction: column; }
+  .ratio-bar div { height: 44px; font-size: 11px; }
+  .scale div { height: 48px; }
+  .tok-grid { gap: 28px; }
+  .guide-footer .wrap { flex-direction: column; gap: 8px; align-items: flex-start; }
+  .voice-principles li { font-size: 14px; }
+  .searchbar { flex-direction: column; }
+  .searchbar .sb-field { width: 100%; }
+  .searchbar .btn { width: 100%; justify-content: center; }
+}
