@@ -61,6 +61,7 @@ Format: what shipped · why it's worth mentioning to Dawn. App repo: `~/Coding/h
 - **Lead + report forms hardened against spam** (V1's killer): hidden honeypot field, server-side validation, and database rules that only accept submissions against approved listings.
 - **Search now sorts purely by real miles**, matching the site's own promise. A featured listing 90 miles away no longer outranks a vetted one nearby.
 - **Full polish pass (rest of the audit backlog):** optimized images, loading skeletons on every page, results map shows per-pin mile badges + a "you are here" dot, admin queries aggregate in SQL (holds at 5,000+ listings), confirmation dialogs on deletes/role changes, restore button for removed listings, edit forms locked to the listing's owner, admin area gated at the routing layer, one consistent CTA everywhere.
+- **v2 audit round (8-agent re-audit, same day):** every Quote A feature independently re-verified as delivered. Fixed: CMS long-form copy now renders formatted (was showing raw Markdown), claim flow can no longer transfer an already-owned listing, login redirect hardened against phishing, admin approval queue shows full details + submitter contact before approving, mobile badge rendering glitch, and three database-level integrity fixes. Copy over-claim on the homepage left for Dawn's copy pass.
 
 ---
 
