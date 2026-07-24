@@ -59,7 +59,8 @@ Format: what shipped · why it's worth mentioning to Dawn. App repo: `~/Coding/h
 - **Mobile hamburger nav** — the header no longer overflows on phones, the single most visible mobile break.
 - **Accessibility pass:** visible keyboard focus rings everywhere, animations respect the OS reduced-motion setting, low-contrast placeholder text fixed.
 - **Lead + report forms hardened against spam** (V1's killer): hidden honeypot field, server-side validation, and database rules that only accept submissions against approved listings.
-- **Search now sorts purely by real miles**, matching the site's own promise — a featured listing 90 miles away no longer outranks a vetted one nearby.
+- **Search now sorts purely by real miles**, matching the site's own promise. A featured listing 90 miles away no longer outranks a vetted one nearby.
+- **Full polish pass (rest of the audit backlog):** optimized images, loading skeletons on every page, results map shows per-pin mile badges + a "you are here" dot, admin queries aggregate in SQL (holds at 5,000+ listings), confirmation dialogs on deletes/role changes, restore button for removed listings, edit forms locked to the listing's owner, admin area gated at the routing layer, one consistent CTA everywhere.
 
 ---
 
