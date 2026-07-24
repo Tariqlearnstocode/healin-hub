@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Page not found · The Healin Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="css/components.css" />
+<link rel="stylesheet" href="brand-guide/first-light.css" />
+<link rel="stylesheet" href="css/pitch.css" />
+<style>
+.site-nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:56px;background:rgba(247,250,248,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #DDE6E0;position:sticky;top:0;z-index:100}
+.site-nav .nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.site-nav .nav-brand img{height:22px;display:block}
+.site-nav .nav-divider{width:1px;height:20px;background:var(--border-default)}
+.site-nav .nav-label{font-family:var(--font-body);font-size:13px;color:var(--text-secondary);font-weight:500}
+.site-nav .nav-right{display:flex;align-items:center;gap:20px}
+.site-nav .nav-guide{font-family:var(--font-body);font-size:13.5px;font-weight:600;color:var(--text-secondary);text-decoration:none;transition:color .15s}
+.site-nav .nav-guide:hover{color:var(--color-action)}
+.site-nav .nav-cta{font-family:var(--font-body);font-size:13.5px;font-weight:600;color:#fff;background:var(--plum-700);text-decoration:none;padding:9px 22px;border-radius:var(--radius-pill);transition:background .15s}
+.site-nav .nav-cta:hover{background:var(--plum-900)}
+@media(max-width:600px){.site-nav{padding:0 20px}.site-nav .nav-label,.site-nav .nav-guide{display:none}}
+
+.notfound{min-height:calc(100vh - 56px - 64px);display:flex;align-items:center;background:linear-gradient(160deg,var(--plum-100) 0%,var(--surface-page) 60%)}
+.notfound .wrap{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:64px;padding-bottom:64px}
+
+.pin-scene{position:relative;width:120px;height:120px;margin-bottom:8px}
+.pin-scene svg{width:100%;height:100%}
+.pin-ping{position:absolute;inset:0;border-radius:50%;border:2px solid var(--teal-300);opacity:0;animation:pin-ping 2.6s ease-out infinite}
+.pin-ping.d2{animation-delay:.9s}
+@keyframes pin-ping{
+  0%{transform:scale(0.55);opacity:.55}
+  80%{transform:scale(1.15);opacity:0}
+  100%{transform:scale(1.15);opacity:0}
+}
+
+.notfound .kicker{display:flex;align-items:center;gap:12px;font:var(--text-label);letter-spacing:var(--label-tracking);text-transform:uppercase;color:var(--color-action);margin:20px 0 18px}
+.notfound .kicker::before,.notfound .kicker::after{content:'';display:block;width:28px;height:2px;background:var(--color-action);border-radius:2px;flex:none}
+
+.notfound h1{font:var(--text-display);font-size:88px;line-height:1;color:var(--plum-700);letter-spacing:-0.01em}
+.notfound h2{font:var(--text-h1);font-size:32px;margin-top:14px;color:var(--text-primary)}
+.notfound p.lede{font:var(--text-body-lg);color:var(--text-secondary);max-width:440px;margin:14px 0 32px;text-wrap:pretty}
+
+.notfound .actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+
+.notfound .try-search{margin-top:40px;display:flex;align-items:center;gap:10px;background:var(--surface-card);border:1px solid var(--border-default);border-radius:var(--radius-pill);padding:8px 8px 8px 20px;box-shadow:var(--shadow-1)}
+.notfound .try-search span{font-family:var(--font-body);font-size:13.5px;color:var(--text-secondary);white-space:nowrap}
+.notfound .try-search code{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12.5px;color:var(--color-action);background:var(--plum-50);border-radius:var(--radius-pill);padding:6px 14px}
+
+@media(max-width:600px){
+  .notfound h1{font-size:64px}
+  .notfound h2{font-size:26px}
+  .notfound .try-search{flex-direction:column;align-items:flex-start;border-radius:var(--radius-lg);padding:14px 16px}
+}
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a class="nav-brand" href="index.html">
+    <img src="assets/logo-ink.svg" alt="The Healin Hub" />
+    <span class="nav-divider"></span>
+    <span class="nav-label">Rebuild Proposal</span>
+  </a>
+  <div class="nav-right">
+    <a class="nav-guide" href="brand-guide.html">Brand Guide</a>
+    <a class="nav-cta" href="index.html#demo">See it in action</a>
+  </div>
+</nav>
+
+<main class="notfound">
+  <div class="wrap">
+    <div class="pin-scene">
+      <span class="pin-ping"></span>
+      <span class="pin-ping d2"></span>
+      <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60 108C60 108 92 75.6 92 48C92 30.3269 77.6731 16 60 16C42.3269 16 28 30.3269 28 48C28 75.6 60 108 60 108Z" fill="var(--plum-700)"/>
+        <circle cx="60" cy="47" r="14" fill="var(--surface-card)"/>
+        <path d="M54 47L58 51L67 42" stroke="var(--plum-700)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" opacity="0"/>
+        <circle cx="60" cy="47" r="5.5" fill="var(--teal-500)"/>
+      </svg>
+    </div>
+
+    <p class="kicker">Lost location</p>
+    <h1>404</h1>
+    <h2>This address isn&rsquo;t on the map.</h2>
+    <p class="lede">The page you&rsquo;re looking for moved, never existed, or the link took a wrong turn. Let&rsquo;s get you back to somewhere real.</p>
+
+    <div class="actions">
+      <a class="btn btn-primary btn-lg" href="index.html">Back to the proposal</a>
+      <a class="btn btn-secondary btn-lg" href="brand-guide.html">View the brand guide</a>
+    </div>
+
+    <div class="try-search">
+      <span>Looking for the demo?</span>
+      <code>index.html#demo</code>
+    </div>
+  </div>
+</main>
+
+<footer class="pitch-footer">
+  <div class="wrap">
+    <span><strong>C4 Growth Solutions</strong> · Chicago, IL · clarence@c4-holding.com</span>
+    <span style="display:flex;align-items:center;gap:24px;">
+      <span>Prepared for Dawn Foster · June 2026</span>
+      <a href="brand-guide.html" style="color:var(--plum-300);font-weight:600;text-decoration:none;font-size:13.5px;white-space:nowrap;">First Light Brand Guide →</a>
+    </span>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,66 @@
+/* The Healin Hub — color tokens (Dawn's real brand: aubergine / mauve / teal, from the logo) */
+:root {
+  /* Plum / aubergine scale (brand core) — anchored on logo #4A1A3D */
+  --plum-900: #1F0C1A;
+  --plum-800: #2E1228; /* text */
+  --plum-700: #4A1A3D; /* brand core · primary action */
+  --plum-600: #5C2A4F;
+  --plum-500: #6E3A61;
+  --plum-400: #8A5A7E;
+  --plum-300: #B192A8;
+  --plum-200: #D9C7D3;
+  --plum-100: #EEE2EA; /* the brand tint (chips, section fills) */
+  --plum-50:  #F7F1F5;
+
+  /* Orchid / mauve scale (warmth, featured) — anchored on logo #9C4F87 */
+  --orchid-700: #6E3760;
+  --orchid-500: #9C4F87;
+  --orchid-400: #B06F9E;
+  --orchid-300: #C99CBB;
+  --orchid-100: #F3E7EF;
+  --orchid-50:  #FBF5F8;
+
+  /* Teal scale (accent · geo · links · vetted) — anchored on logo #2E8C9B */
+  --teal-700: #1E5F6B;
+  --teal-600: #256F7C;
+  --teal-500: #2E8C9B;
+  --teal-400: #58A6B3;
+  --teal-300: #94C9D1;
+  --teal-200: #C2E1E6;
+  --teal-100: #E2F1F3;
+  --teal-50:  #F0F8F9;
+
+  /* Plum-tinted neutrals */
+  --n-700: #443B41;
+  --n-500: #6B5F67;
+  --n-300: #A79EA3;
+  --n-200: #D6CFD3;
+  --n-150: #E5DFE2;
+  --n-100: #EFEBED;
+  --n-50:  #F8F6F7;
+  --white: #FFFFFF;
+
+  /* Semantic */
+  --success: #1F7A5C;
+  --success-tint: #E3F2EB;
+  --warning: #A8650E;
+  --warning-tint: #FBEFDB;
+  --error: #B5484D;
+  --error-tint: #F9E6E4;
+
+  /* Aliases — use these in product code */
+  --color-action: var(--plum-700);
+  --color-action-hover: var(--plum-800);
+  --color-accent: var(--teal-500);
+  --color-accent-hover: var(--teal-600);
+  --text-primary: var(--plum-800);
+  --text-secondary: var(--n-500);
+  --text-muted: var(--n-300);
+  --surface-page: var(--n-50);
+  --surface-card: var(--white);
+  --surface-tint: var(--plum-100);
+  --border-default: var(--n-150);
+  --border-strong: var(--n-200);
+  --focus-ring: var(--teal-200);
+  --featured-text: var(--orchid-700);
+}

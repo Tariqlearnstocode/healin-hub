@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "healin-hub-pitch",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8743"],
+      "port": 8743
+    },
+    {
+      "name": "healin-hub-app",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "/Users/tariqarchibald/Coding/healin-hub-app"],
+      "port": 3000
+    }
+  ]
+}

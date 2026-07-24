@@ -1,0 +1,3 @@
+# The product app is its own git repo, nested here since the 2026-07 reorg.
+healin-hub-app/
+.DS_Store
