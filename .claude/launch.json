@@ -10,7 +10,7 @@
     {
       "name": "healin-hub-app",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--prefix", "/Users/tariqarchibald/Coding/healin-hub-app"],
+      "runtimeArgs": ["run", "dev", "--prefix", "/Users/tariqarchibald/Coding/Healin-hub/healin-hub-app"],
       "port": 3000
     }
   ]

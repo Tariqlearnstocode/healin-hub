@@ -56,6 +56,10 @@ Format: what shipped · why it's worth mentioning to Dawn. App repo: `~/Coding/h
 - **Search matches services, not just names.** "Lip filler" or "facial" now finds providers whose services match even when their business name doesn't.
 - **Listing pages got per-page titles and LocalBusiness structured data** (a contractual SEO item), plus two XSS fixes (structured-data injection, unvalidated provider URLs) and a timeout on the geocoder call.
 - **Marketing copy aligned with the Terms.** "Verify/checked by hand/safe" softened to review-process language so the homepage can't be quoted against the disclaimer.
+- **Mobile hamburger nav** — the header no longer overflows on phones, the single most visible mobile break.
+- **Accessibility pass:** visible keyboard focus rings everywhere, animations respect the OS reduced-motion setting, low-contrast placeholder text fixed.
+- **Lead + report forms hardened against spam** (V1's killer): hidden honeypot field, server-side validation, and database rules that only accept submissions against approved listings.
+- **Search now sorts purely by real miles**, matching the site's own promise — a featured listing 90 miles away no longer outranks a vetted one nearby.
 
 ---
 
