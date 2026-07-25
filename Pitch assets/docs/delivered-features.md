@@ -48,7 +48,7 @@ Format: what shipped · why it's worth mentioning to Dawn. App repo: `~/Coding/h
 - **Branded 404 page** (aubergine/teal, animated map-pin, clear paths back).
 - **Supporting pages:** About, Contact, Pricing ("list free," honest premium-later note), Privacy, Terms (frames "Vetted" as a review process, not a guarantee — a real liability point in this space).
 - **Categories index page** with live listing counts and per-category service lists.
-- **Dawn's real logo everywhere:** header, footer, favicon (mark), white variant staged for dark surfaces.
+- **Dawn's real logo everywhere:** header, footer, white variant staged for dark surfaces. (Favicon was still the Next.js default at the time of this note; fixed 2026-07-25, see below.)
 
 ### Audit hardening (2026-07-24, from the end-to-end audit)
 - **Repo now rebuilds the real database.** The four migrations that existed only in the live project (auto profile on signup, V2 schema + CMS tables, reports, photo storage) are committed, so a fresh provision matches production.
@@ -62,6 +62,8 @@ Format: what shipped · why it's worth mentioning to Dawn. App repo: `~/Coding/h
 - **Search now sorts purely by real miles**, matching the site's own promise. A featured listing 90 miles away no longer outranks a vetted one nearby.
 - **Full polish pass (rest of the audit backlog):** optimized images, loading skeletons on every page, results map shows per-pin mile badges + a "you are here" dot, admin queries aggregate in SQL (holds at 5,000+ listings), confirmation dialogs on deletes/role changes, restore button for removed listings, edit forms locked to the listing's owner, admin area gated at the routing layer, one consistent CTA everywhere.
 - **v2 audit round (8-agent re-audit, same day):** every Quote A feature independently re-verified as delivered. Fixed: CMS long-form copy now renders formatted (was showing raw Markdown), claim flow can no longer transfer an already-owned listing, login redirect hardened against phishing, admin approval queue shows full details + submitter contact before approving, mobile badge rendering glitch, and three database-level integrity fixes. Copy over-claim on the homepage left for Dawn's copy pass.
+- **Real favicon on both the app and the pitch site.** The app was still flying the default Next.js logo in browser tabs, bookmarks, and link previews; the pitch site had no icon at all. Both now use a simplified brand mark (plum disc, teal rim, white H) at 16/32/48px, plus a 180px home-screen icon for iOS. The full globe mark loses its detail below about 32px, so the small mark is a deliberate reduction rather than a shrink.
+- **Share cards for every page (Open Graph + Twitter).** Before this, a link to the site pasted into Instagram, iMessage, Facebook or Slack unfurled as a bare URL with no image and no title. Now every page produces a branded 1200x630 card in Dawn's own colors and fonts, and listing pages generate their own: the provider's name in the serif, her category, her city, and a teal "Vetted" pill if she's vetted. *Worth mentioning to Dawn:* this is the piece that makes providers sharing their own listing page do marketing work for the directory. Also set `metadataBase`, which OG images need to resolve to real URLs in production.
 
 ---
 
@@ -70,7 +72,8 @@ Format: what shipped · why it's worth mentioning to Dawn. App repo: `~/Coding/h
 - [x] **Apply migrations 0007 (RLS hardening) + 0008 (search text expansion) to the live Supabase project** — applied and verified 2026-07-24.
 - [x] **Add `SUPABASE_SERVICE_ROLE_KEY`** to `.env.local` — done 2026-07-24. Still needs adding to Vercel env at deploy time.
 - [ ] **Deploy** to production (Vercel + domain).
-- [ ] **Pre-launch config:** point Supabase auth Site URL + redirect URLs and NEXT_PUBLIC_SITE_URL at the production domain (currently localhost).
+- [ ] **Pre-launch config:** point Supabase auth Site URL + redirect URLs and NEXT_PUBLIC_SITE_URL at the production domain (currently localhost). NEXT_PUBLIC_SITE_URL now also drives `metadataBase`, so until it's set the share cards point at localhost and won't render for Facebook or iMessage.
+- [ ] **Pitch site social tags.** The app has full Open Graph now; `Pitch assets/` still has none, so the proposal link unfurls bare when it's forwarded. Deliberately deferred 2026-07-25.
 - [ ] **Post-launch handoff:** transfer the Supabase project (currently $10/mo on Tariq's account) to Dawn's own Supabase organization so she owns her data and the bill. Remember to move the env keys on Vercel to the transferred project's values if they change.
 
 ---

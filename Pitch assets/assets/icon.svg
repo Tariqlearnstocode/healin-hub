@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="The Healin Hub">
+  <circle cx="120" cy="120" r="120" fill="#4A1A3D"/>
+  <circle cx="120" cy="120" r="112" fill="none" stroke="#2E8C9B" stroke-width="15"/>
+  <path d="M78 64h22v45h40V64h22v112h-22v-45h-40v45H78z" fill="#fff"/>
+</svg>
