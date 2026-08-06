@@ -4,14 +4,36 @@
     {
       "name": "healin-hub-pitch",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8743"],
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8743"
+      ],
       "port": 8743
     },
     {
       "name": "healin-hub-app",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--prefix", "/Users/tariqarchibald/Coding/Healin-hub/healin-hub-app"],
-      "port": 3000
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "/Users/tariqarchibald/Coding/Healin-hub/healin-hub-app"
+      ],
+      "port": 3000,
+      "autoPort": true
+    },
+    {
+      "name": "quizgen-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "/Users/tariqarchibald/Coding/quizgen"
+      ],
+      "port": 3000,
+      "autoPort": true
     }
   ]
 }
